@@ -22,5 +22,5 @@ for model_name in ['logistic', 'rf','svm']:
     print(f"F1 Score: {metrics[0]},Precision: {metrics[1]}")
 
 # log experiment
-# f.track_experiment(model_name, metrics) # Save to CSV/JSON
+
 
