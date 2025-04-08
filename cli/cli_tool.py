@@ -2,7 +2,9 @@
 
 ##add the path to the folder mlops project to identify the package or is there other method to adress this issue?
 import sys
-sys.path.append('D:/MainWorkingPlace/MLOPS/final project/MLOps_group')
+path=input('add the absolute path to the folder mlops_group(example:D:/final project/MLOps_group without Quotation): ') 
+# exp: 'D:/MainWorkingPlace/MLOPS/final project/MLOps_group'
+sys.path.append(path)
 ####
 
 import argparse

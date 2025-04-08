@@ -2,7 +2,7 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY . /app
+COPY . /app  
 
 #requirements.txt should be in the same level of other folders
 ## keep docker size small and avoid unexpected settings
@@ -12,6 +12,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8501 
 
 ENTRYPOINT ["streamlit", "run", "streamlit/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+# Note: The execution of streamlit/app.py depends on packages located in another folder.
+# Since the Dockerfile only includes files from the current directory, I moved this file to the upper level.
+
 
 
 
