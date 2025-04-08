@@ -40,9 +40,9 @@ This project includes both `requirements.txt` and `pyproject.toml`.
 
 - `requirements.txt` is used mainly for deployment of the app (streamlit/app.py) and containerization using Docker.After creating your virtual environment, run:
 
-```bash pip install -r requirements.txt ```
+```pip install -r requirements.txt ```
 
-- `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: ```bash hatch install ```
+- `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: ``` hatch install ```
 
 ## checkpoints
 Rhis folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
@@ -55,7 +55,7 @@ This folder contrains all principle code for machine learning modeling. It also 
 
 ## streamlit
 A user-friendly streamlit-based app to interact with the models. To launch the app, run:
-```bash streamlit run streamlit/app.py ```
+``` streamlit run streamlit/app.py ```
 
 **Note:** The Dockerfile is located one level above this folder, because Docker builds only from the current context,but the app requires access to files in other folders.
 
@@ -65,4 +65,4 @@ The CLI tool supports two commands:
 2. **Train or evaluate a model:**
 ```bash python cli/cli_tool.py predict --model [model_name] --mode [train|eval] ```
   - `--model`: Choose a model (e.g., `logistic`, `rf`, or `svm`)
-  - `--mode`:  `train`: Trains the model. You'll see: `"Your model {modelname} is saved successfully."`, `eval`: Evaluates the model. A performance score will be returned. ``` </pre>
+  - `--mode`:  `train`: Trains the model. You'll see: `"Your model {modelname} is saved successfully."`; `eval`: Evaluates the model. A performance score will be returned. 
