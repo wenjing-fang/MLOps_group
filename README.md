@@ -45,7 +45,7 @@ This project includes both `requirements.txt` and `pyproject.toml`.
 - `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: ``` hatch install ```
 
 ## checkpoints
-Rhis folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
+This folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
 
 ## dataset
 The data for machine learning modeling
