@@ -54,7 +54,7 @@ The data for machine learning modeling
 This folder contrains all principle code for machine learning modeling. It also serves as a module that could be imported by other scripts
 
 ## streamlit
-A user-friendly **Streamlit-based app** to interact with the models. To launch the app, run:
+A user-friendly streamlit-based app to interact with the models. To launch the app, run:
 ```bash streamlit run streamlit/app.py ```
 
 **Note:** The Dockerfile is located one level above this folder, because Docker builds only from the current context,but the app requires access to files in other folders.
