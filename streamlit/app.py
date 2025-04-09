@@ -1,5 +1,6 @@
 ##add the path to the folder mlops project to identify the package or is there other method to adress this issue?
 import sys
+import os
 sys.path.append('/Users/fionafang/Documents/A_OnUsing/Study_ESSEC/Course-8_MLOps/MLOps_group')
 print("Current working directory:", os.getcwd())
 print("Current sys.path:", sys.path)
