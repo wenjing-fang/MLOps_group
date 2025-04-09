@@ -2,18 +2,18 @@
 
 ##add the path to the folder mlops project to identify the package or is there other method to adress this issue?
 import sys
-path=input('add the absolute path to the folder mlops_group(example:D:/final project/MLOps_group without Quotation): ') 
+import os
+# path=input('add the absolute path to the folder mlops_group(example:D:/final project/MLOps_group without Quotation): ') 
 # exp: 'D:/MainWorkingPlace/MLOPS/final project/MLOps_group'
-sys.path.append(path)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 ####
 
 import argparse
 from html import parser
 import logging 
-import os
 
-import project_code.functions as f
-import project_code.models as models 
+import ml.functions as f
+import ml.models as models 
 
 logging.basicConfig(
     level=logging.INFO,

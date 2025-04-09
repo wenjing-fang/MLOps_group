@@ -6,13 +6,9 @@ The objective of this project is to come up with a MLOPS tool that include the w
 ## Structure
 
 <pre> ``` 
-├── .gitignore
+.
 ├── Dockerfile.streamlit
-├── EDA(do not submit this).ipynb
-├── pyproject.toml
 ├── README.md
-├── requirements.txt
-├── __init__.py
 ├── checkpoints
 │   ├── logistic.pkl
 │   ├── rf.pkl
@@ -21,17 +17,29 @@ The objective of this project is to come up with a MLOPS tool that include the w
 │   └── cli_tool.py
 ├── dataset
 │   └── bank.csv
-├── project_code
-│   ├── functions.py
-│   ├── main.py
-│   ├── models.py
+├── ml
 │   ├── __init__.py
-│   └── __pycache__
-│       ├── functions.cpython-311.pyc
-│       ├── models.cpython-311.pyc
-│       └── __init__.cpython-311.pyc
-└── streamlit
-    └── app.py ``` </pre>
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── functions.cpython-312.pyc
+│   │   ├── functions.cpython-313.pyc
+│   │   └── models.cpython-312.pyc
+│   ├── functions.py
+│   └── models.py
+├── pyproject.toml
+├── requirements.txt
+├── streamlit
+│   └── app.py
+└── tests
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── test_cli_tool.cpython-312.pyc
+    │   ├── test_functions.cpython-312.pyc
+    │   └── test_models.cpython-312.pyc
+    ├── test_functions.py
+    └── test_models.py
+``` </pre>
 
 ## Dependencies
 Make sure your current working directory is inside the folder `MLOps_group`.

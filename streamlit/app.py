@@ -7,8 +7,8 @@ print("Current sys.path:", sys.path)
 ###################
 
 
-import project_code.functions as f
-import project_code.models as models 
+import ml.functions as f
+import ml.models as models 
 
 import streamlit as st
 import pandas as pd
