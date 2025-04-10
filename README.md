@@ -46,15 +46,12 @@ This project includes both `requirements.txt` and `pyproject.toml`.
 ## tests
 The `tests/` folder includes unit tests written using Python's built-in `unittest` framework. These tests ensure the core machine learning logic and utility functions are working correctly.
 
-- **`test_functions.py`**  
-  Contains tests for data preprocessing and evaluation functions defined in `ml/functions.py`. It validates:
+- **`test_functions.py`** contains tests for data preprocessing and evaluation functions defined in `ml/functions.py`. It validates:
   - That target encoding is correctly applied (`deposit` column).
   - That user input is preprocessed without label leakage.
   - That data is correctly split into training and test sets.
   - That model evaluation metrics return expected data types (e.g., F1 score, precision).
-
-- **`test_models.py`**  
-  Verifies model selection and training routines in `ml/models.py`. Key aspects tested include:
+- **`test_models.py`** verifies model selection and training routines in `ml/models.py`. Key aspects tested include:
   - Correct instantiation of models (`LogisticRegression`, `RandomForestClassifier`, `SVC`) via the `get_model()` function.
   - Error handling for unsupported model names.
   - Training validation via the presence of a `predict` method in trained models.
@@ -62,18 +59,18 @@ The `tests/` folder includes unit tests written using Python's built-in `unittes
 Each test uses small, simulated datasets to isolate logic and ensure reproducibility.
 
 ## checkpoints
-This folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
+The `checkpoints/` folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
 
 ## dataset
-The data for machine learning modeling
+The data for machine learning modeling.
 
 ## ml
-This folder contains the core machine learning logic for the project, including data processing, model management, and evaluation utilities. It is structured to support a modular, testable, and reusable ML pipeline.
-- `functions.py` provides functions for data ingestion, data preprocessing, data splitting, model evaluation and model saving/loading.
-- `models.py` contains functions for ml models selection.
+The `ml/` folder contains the core machine learning logic for the project, including data processing, model management, and evaluation utilities. It is structured to support a modular, testable, and reusable ML pipeline.
+- **`functions.py`** provides functions for data ingestion, data preprocessing, data splitting, model evaluation and model saving/loading.
+- **`models.py`** contains functions for ml models selection.
 
 ## FastApi
-This folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
+The `FastApi/` folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
 
 ## streamlit
 A user-friendly streamlit-based app to interact with the models. To launch the app, run:
