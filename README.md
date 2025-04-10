@@ -37,9 +37,14 @@ This project includes both `requirements.txt` and `pyproject.toml`.
 
 - `requirements.txt` is used mainly for deployment of the app (streamlit/app.py) and containerization using Docker.After creating your virtual environment, run:
 
-```pip install -r requirements.txt ```
+```bash
+pip install -r requirements.txt 
+```
 
-- `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: ``` hatch install ```
+- `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: 
+``` bash
+hatch install 
+```
 
 
 ## Folder Description
@@ -56,7 +61,9 @@ The `checkpoints/` folder stores **trained models** (logistic, random forest, an
 
 ### streamlit
 A user-friendly streamlit-based app to interact with the models. To launch the app, run:
-``` streamlit run streamlit/app.py ```
+``` bash
+streamlit run streamlit/app.py 
+```
 
 ### FastApi
 The `FastApi/` folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
@@ -77,14 +84,12 @@ python cli/cli_tool.py predict --model [model_name] --mode [train|eval]
 ### tests
 The `tests/` folder includes unit tests written using Python's built-in `unittest` framework. These tests ensure the core machine learning logic and utility functions are working correctly.
 - **`test_functions.py`** contains tests for data preprocessing and evaluation functions defined in `ml/functions.py`. It validates:
-  - That target encoding is correctly applied (`deposit` column).
   - That user input is preprocessed without label leakage.
   - That data is correctly split into training and test sets.
   - That model evaluation metrics return expected data types (e.g., F1 score, precision).
 - **`test_models.py`** verifies model selection and training routines in `ml/models.py`. Key aspects tested include:
   - Correct instantiation of models (`LogisticRegression`, `RandomForestClassifier`, `SVC`) via the `get_model()` function.
   - Error handling for unsupported model names.
-  - Training validation via the presence of a `predict` method in trained models.
 - **Usage**: to run all unit tests:
   ```bash
    python -m unittest discover -s tests
