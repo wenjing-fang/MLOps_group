@@ -30,7 +30,6 @@ The objective of this project is to come up with a MLOPS tool that include the w
     ├── test_functions.py
     └── test_models.py
 ``` </pre>
-
 ## Dependencies
 Make sure your current working directory is inside the folder `MLOps_group`.
 
@@ -41,22 +40,6 @@ This project includes both `requirements.txt` and `pyproject.toml`.
 ```pip install -r requirements.txt ```
 
 - `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: ``` hatch install ```
-
-
-## tests
-The `tests/` folder includes unit tests written using Python's built-in `unittest` framework. These tests ensure the core machine learning logic and utility functions are working correctly.
-
-- **`test_functions.py`** contains tests for data preprocessing and evaluation functions defined in `ml/functions.py`. It validates:
-  - That target encoding is correctly applied (`deposit` column).
-  - That user input is preprocessed without label leakage.
-  - That data is correctly split into training and test sets.
-  - That model evaluation metrics return expected data types (e.g., F1 score, precision).
-- **`test_models.py`** verifies model selection and training routines in `ml/models.py`. Key aspects tested include:
-  - Correct instantiation of models (`LogisticRegression`, `RandomForestClassifier`, `SVC`) via the `get_model()` function.
-  - Error handling for unsupported model names.
-  - Training validation via the presence of a `predict` method in trained models.
-
-Each test uses small, simulated datasets to isolate logic and ensure reproducibility.
 
 ## checkpoints
 The `checkpoints/` folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
@@ -85,3 +68,18 @@ The CLI tool supports two commands:
 ```bash python cli/cli_tool.py predict --model [model_name] --mode [train|eval] ```
   - `--model`: Choose a model (e.g., `logistic`, `rf`, or `svm`)
   - `--mode`:  `train`: Trains the model. You'll see: `"Your model {modelname} is saved successfully."`; `eval`: Evaluates the model. A performance score will be returned. 
+
+## tests
+The `tests/` folder includes unit tests written using Python's built-in `unittest` framework. These tests ensure the core machine learning logic and utility functions are working correctly.
+- **`test_functions.py`** contains tests for data preprocessing and evaluation functions defined in `ml/functions.py`. It validates:
+  - That target encoding is correctly applied (`deposit` column).
+  - That user input is preprocessed without label leakage.
+  - That data is correctly split into training and test sets.
+  - That model evaluation metrics return expected data types (e.g., F1 score, precision).
+- **`test_models.py`** verifies model selection and training routines in `ml/models.py`. Key aspects tested include:
+  - Correct instantiation of models (`LogisticRegression`, `RandomForestClassifier`, `SVC`) via the `get_model()` function.
+  - Error handling for unsupported model names.
+  - Training validation via the presence of a `predict` method in trained models.
+- **Usage**: to run all unit tests:
+  ```bash
+   python -m unittest discover -s tests
