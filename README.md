@@ -61,6 +61,9 @@ The data for machine learning modeling
 ## project_code
 This folder contrains all principle code for machine learning modeling. It also serves as a module that could be imported by other scripts
 
+## FastApi
+This folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
+
 ## streamlit
 A user-friendly streamlit-based app to interact with the models. To launch the app, run:
 ``` streamlit run streamlit/app.py ```
