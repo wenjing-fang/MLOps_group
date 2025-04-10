@@ -41,35 +41,40 @@ This project includes both `requirements.txt` and `pyproject.toml`.
 
 - `pyproject.toml` provides a more flexible and modern way to manage dependencies. We use **hatchling** as our build system. To install dependencies via `pyproject.toml`, run: ``` hatch install ```
 
-## checkpoints
-The `checkpoints/` folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
 
-## dataset
+## Folder Description
+### dataset
 The data for machine learning modeling.
 
-## ml
+### ml
 The `ml/` folder contains the core machine learning logic for the project, including data processing, model management, and evaluation utilities. It is structured to support a modular, testable, and reusable ML pipeline.
 - **`functions.py`** provides functions for data ingestion, data preprocessing, data splitting, model evaluation and model saving/loading.
 - **`models.py`** contains functions for ml models selection.
 
-## FastApi
-The `FastApi/` folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
+### checkpoints
+The `checkpoints/` folder stores **trained models** (logistic, random forest, and SVM) as `.pkl` files using `pickle`.
 
-## streamlit
+### streamlit
 A user-friendly streamlit-based app to interact with the models. To launch the app, run:
 ``` streamlit run streamlit/app.py ```
 
-**Note:** The Dockerfile is located one level above this folder, because Docker builds only from the current context,but the app requires access to files in other folders.
+### FastApi
+The `FastApi/` folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
 
-## CLI
+### CLI
 The CLI tool supports two commands: 
-1. **List available models:** ```bash python cli/cli_tool.py list ```
+1. **List available models:** 
+```bash 
+python cli/cli_tool.py list 
+```
 2. **Train or evaluate a model:**
-```bash python cli/cli_tool.py predict --model [model_name] --mode [train|eval] ```
+```bash 
+python cli/cli_tool.py predict --model [model_name] --mode [train|eval] 
+```
   - `--model`: Choose a model (e.g., `logistic`, `rf`, or `svm`)
   - `--mode`:  `train`: Trains the model. You'll see: `"Your model {modelname} is saved successfully."`; `eval`: Evaluates the model. A performance score will be returned. 
 
-## tests
+### tests
 The `tests/` folder includes unit tests written using Python's built-in `unittest` framework. These tests ensure the core machine learning logic and utility functions are working correctly.
 - **`test_functions.py`** contains tests for data preprocessing and evaluation functions defined in `ml/functions.py`. It validates:
   - That target encoding is correctly applied (`deposit` column).
@@ -83,3 +88,6 @@ The `tests/` folder includes unit tests written using Python's built-in `unittes
 - **Usage**: to run all unit tests:
   ```bash
    python -m unittest discover -s tests
+   ```
+  
+**Note:** The Dockerfile is located one level above this folder, because Docker builds only from the current context,but the app requires access to files in other folders.
