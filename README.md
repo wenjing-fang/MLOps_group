@@ -7,28 +7,45 @@ The objective of this project is to come up with a MLOPS tool that include the w
 
 <pre> ``` 
 .
-├── Dockerfile.streamlit
-├── README.md
-├── checkpoints
-│   ├── logistic.pkl
-│   ├── rf.pkl
-│   └── svm.pkl
-├── cli
-│   └── cli_tool.py
-├── dataset
-│   └── bank.csv
-├── ml
-│   ├── __init__.py
-│   ├── functions.py
-│   └── models.py
-├── pyproject.toml
-├── requirements.txt
-├── streamlit
-│   └── app.py
-└── tests
-    ├── __init__.py
-    ├── test_functions.py
-    └── test_models.py
+│  .gitignore
+│  Dockerfile.streamlit
+│  pyproject.toml
+│  README.md
+│  requirements.txt
+│
+├─checkpoints
+│      logistic.pkl
+│      rf.pkl
+│      svm.pkl
+│
+├─cli
+│      cli_tool.py
+│
+├─dataset
+│      bank.csv
+│
+├─fastapi
+│  │  api.py
+│  └─ valide_user_request.py
+│
+├─ml
+│  │  functions.py
+│  │  models.py
+│  └─ __init__.py
+│
+├─project_code
+│  └─__pycache__
+│          functions.cpython-311.pyc
+│          models.cpython-311.pyc
+│          __init__.cpython-311.pyc
+│
+├─streamlit
+│      app.py
+│
+└─tests
+        test_functions.py
+        test_models.py
+        __init__.py
 ``` </pre>
 ## Dependencies
 Make sure your current working directory is inside the folder `MLOps_group`.
