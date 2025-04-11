@@ -66,7 +66,23 @@ streamlit run streamlit/app.py
 ```
 
 ### FastApi
-The `FastApi/` folder contains a api basically using fastapi and univorn to create a api that offers two choice: list and predict. For list, the method is "get" and for predict the method is "get" and "post".  
+The `FastApi/` folder contains a api basically using fastapi and univorn to create a api. This simple API structure allows users to quickly train and evaluate ML models through HTTP requests.
+1. **List Models**
+   - **Path:** `/models/`
+   - **Method:** `GET`
+   - **Description:** Returns a list of all saved model names from the `checkpoints/` folder.
+
+2. **Predict (Train or Evaluate a Model)**
+   - **Path:** `/predict`
+   - **Methods:** `GET`, `POST`
+   - **Parameters:**
+     - `model_name`: the name of the model (e.g., `"rf"` which means random forest)
+     - `mode`: either `"train"` or `"eval"`
+   - **Description:**
+     - `train`: trains a model and saves it.
+     - `eval`: loads a saved model and returns evaluation metrics (F1 score, precision).
+
+
 
 ### CLI
 The CLI tool supports two commands: 
