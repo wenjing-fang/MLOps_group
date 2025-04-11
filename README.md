@@ -65,6 +65,9 @@ hatch install
 
 
 ## Folder Description
+### MLOps Workflow Implementation Doc
+This is a document explaining the workflows we are trying to implement and the functionalities we are aiming for.
+
 ### dataset
 The data for machine learning modeling.
 
