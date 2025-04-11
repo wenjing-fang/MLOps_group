@@ -14,7 +14,7 @@ def get_model_names():
         modelnames=[f[:f.index('.')] for f in filenames]
         return modelnames
 
-def predict(model_name,mode):
+def get_result(model_name,mode):
     # input data
     raw_data = f.read_dataset()
     data = f.preprocess_data(raw_data)
@@ -48,12 +48,10 @@ async def list_models():
 async def predict(model_name: str, mode: str):
      #use valide_request to valide the input type
     try:
-        result=await predict(model_name,mode)
+        result=get_result(model_name,mode)
         return result
     except Exception as e:
-        raise HTTPException(status_code=500,detail=str(e))
-
-
+        raise HTTPException(status_code=500,detail=str(e)) #raise internal error 
 
 
 if __name__=='__main__':
